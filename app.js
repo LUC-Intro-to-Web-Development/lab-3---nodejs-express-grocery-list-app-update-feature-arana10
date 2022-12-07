@@ -43,10 +43,24 @@ app.get('/', function (req, res) {
 	
  })
 
- app.post('/update_item', function (req, res) {
-	const { updaterecord } = req.body
+// ROUTE TO UPDATE GROCERY LIST ITEM
+app.post('/update_item', function (req, res) {
+	// Getting body parameters
+	const {updaterecord} = req.body;
 
-	console.log("This is the update route and id # " + updaterecord + " was sent back to the server");
-})
- 
+	dbOperations.getAItem(updaterecord, res);
+	
+	
+
+ })
+
+ app.post('/confirm_update', function (req, res) {
+	// Getting body parameters
+	const {item_name, item_count, confirmupdate} = req.body;
+
+
+	dbOperations.updateItem(item_name, item_count, confirmupdate, res);
+	
+ })
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -14,13 +14,11 @@
                 border-collapse: collapse;
                 width: 100%;
                 }
-
                 td, th {
                 border: 1px solid #dddddd;
                 text-align: left;
                 padding: 8px;
                 }
-
                 tr:nth-child(even) {
                 background-color: #dddddd;
             }
@@ -52,11 +50,16 @@
                         <td>{{this.item_name}}</td>
                         <td>{{this.item_count}}</td>
                         <td>
-                             <form action="/update_item" method="POST">
-                                <button name="updaterecord" id="updatenow" type="submit" class="btn btn-success" value="{{this.itemID}}">UPDATE</button>
-                            </form>
-                            <form action="/delete_item" method="POST">
+                            <form action="/delete_item" method="POST" style="float:left; margin-right: 12px;">
                                 <button name="deleterecord" id="deletenow" type="submit" class="btn btn-danger" value="{{this.itemID}}">DELETE</button>
+                            </form>
+                            <form action="/update_item" method="POST">
+                                <button name="updaterecord" id="updatenow" type="update" class="btn btn-success" value="{{this.itemID}}">UPDATE</button>
+                            </form>
+                        </td>
+
+
+                         
                             </form>
                         </td>
                         
