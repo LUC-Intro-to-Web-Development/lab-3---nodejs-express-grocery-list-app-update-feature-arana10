@@ -43,5 +43,10 @@ app.get('/', function (req, res) {
 	
  })
 
+ app.post('/update_item', function (req, res) {
+	const { updaterecord } = req.body
+
+	console.log("This is the update route and id # " + updaterecord + " was sent back to the server");
+})
  
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
